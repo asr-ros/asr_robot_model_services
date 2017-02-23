@@ -24,9 +24,9 @@ from actionlib.msg import *
 import numpy
 from time import time
 from ptu_controller.msg import PTUMovementGoal, PTUMovementAction
-from robot_model_services.srv import GetPose, CalculateCameraPoseCorrection, CalculateCameraPose
+from asr_robot_model_services.srv import GetPose, CalculateCameraPoseCorrection, CalculateCameraPose
 from next_best_view.srv import TriggerFrustumVisualization
-from robot_model_services.msg import RobotStateMessage
+from asr_robot_model_services.msg import RobotStateMessage
 from sensor_msgs.msg import JointState
 import tf
 import tf2_ros
@@ -34,13 +34,13 @@ import tf2_ros
 ptu = None
 
 def get_robot_pose_cpp():
-    rospy.wait_for_service('/robot_model_services/GetRobotPose', timeout=5)
-    pose = rospy.ServiceProxy('/robot_model_services/GetRobotPose',GetPose)
+    rospy.wait_for_service('/asr_robot_model_services/GetRobotPose', timeout=5)
+    pose = rospy.ServiceProxy('/asr_robot_model_services/GetRobotPose',GetPose)
     return pose().pose
 
 def get_camera_pose_cpp():
-    rospy.wait_for_service('/robot_model_services/GetCameraPose', timeout=5)
-    pose = rospy.ServiceProxy('/robot_model_services/GetCameraPose',GetPose)
+    rospy.wait_for_service('/asr_robot_model_services/GetCameraPose', timeout=5)
+    pose = rospy.ServiceProxy('/asr_robot_model_services/GetCameraPose',GetPose)
     return pose().pose
 
 def get_camera_frustum(camera_pose):
@@ -97,8 +97,8 @@ def get_rotation_from_pose(pose):
 def point_published(data):
     rospy.loginfo(rospy.get_caller_id() + "Set focus point to (" + str(data.point.x) + ", " + str(data.point.y) + ", "+ str(data.point.z) + ")")
 
-    fcp = rospy.get_param("/robot_model_services/fcp")
-    ncp = rospy.get_param("/robot_model_services/ncp")
+    fcp = rospy.get_param("/asr_robot_model_services/fcp")
+    ncp = rospy.get_param("/asr_robot_model_services/ncp")
 
     targetPosition = Point()
     targetOrientation = Quaternion()
@@ -111,9 +111,9 @@ def point_published(data):
     targetOrientation.z = 0.0
 
     try:
-        rospy.wait_for_service('/robot_model_services/CalculateCameraPoseCorrection', timeout=5)
+        rospy.wait_for_service('/asr_robot_model_services/CalculateCameraPoseCorrection', timeout=5)
         calculateCameraPoseCorrection = rospy.ServiceProxy(
-            '/robot_model_services/CalculateCameraPoseCorrection',
+            '/asr_robot_model_services/CalculateCameraPoseCorrection',
             CalculateCameraPoseCorrection)
         actual_state = get_robot_state()
 
