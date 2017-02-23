@@ -1,0 +1,13 @@
+*.config
+*.files
+*.includes
+dif.txt
+diff2.txt
+*.creator
+*.creator.user
+IVT/include
+IVT/share
+IVT/lib
+IVT/usr
+*~
+include/ivtrecognition

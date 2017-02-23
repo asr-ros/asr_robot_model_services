@@ -1,0 +1,9 @@
+<launch>
+	<include file="$(find ptu_driver)/launch/ptu_left_mock.launch" />
+	<env name="ROSCONSOLE_CONFIG_FILE" value="$(find robot_model_services)/log/rosconsole.config" />
+	<node pkg="robot_model_services" type="robot_model_services_ik_test" name="robot_model_services" output="screen">
+		<rosparam file="$(find robot_model_services)/rsc/robot_model_services_settings_sim.yaml"/>
+		<rosparam file="$(find robot_model_services)/rsc/robot_model_frames.yaml"/>
+	  	<rosparam file="$(find robot_model_services)/rsc/TopicsConfig.yaml"/>
+	</node>
+</launch>
