@@ -24,12 +24,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "robot_model_services/robot_model/RobotState.hpp"
 #include <ros/ros.h>
 #include "robot_model_services/typedef.hpp"
-#include "robot_model_services/CalculateCameraPose.h"
-#include "robot_model_services/CalculateCameraPoseCorrection.h"
-#include "robot_model_services/IsPositionAllowed.h"
-#include "robot_model_services/RobotStateMessage.h"
-#include "robot_model_services/GetPose.h"
-#include "robot_model_services/GetDistance.h"
+#include "asr_robot_model_services/CalculateCameraPose.h"
+#include "asr_robot_model_services/CalculateCameraPoseCorrection.h"
+#include "asr_robot_model_services/IsPositionAllowed.h"
+#include "asr_robot_model_services/RobotStateMessage.h"
+#include "asr_robot_model_services/GetPose.h"
+#include "asr_robot_model_services/GetDistance.h"
 #include <Eigen/Dense>
 #include <tf/transform_datatypes.h>
 #include <eigen_conversions/eigen_msg.h>
@@ -40,13 +40,13 @@ using namespace robot_model_services;
 MILDRobotModelPtr basicFunctionRobotModelPtr;
 MILDRobotModelWithExactIKPtr advancedFunctionRobotModelPtr;
 
-bool getDistance(GetDistance::Request &req, GetDistance::Response &res)
+bool getDistance(asr_robot_model_services::GetDistance::Request &req, asr_robot_model_services::GetDistance::Response &res)
 {
       res.distance = basicFunctionRobotModelPtr->getDistance(req.sourcePosition, req.targetPosition);
       return true;
 }
 
-bool processCalculateCameraPoseServiceCall(CalculateCameraPose::Request &req, CalculateCameraPose::Response &res)
+bool processCalculateCameraPoseServiceCall(asr_robot_model_services::CalculateCameraPose::Request &req, asr_robot_model_services::CalculateCameraPose::Response &res)
 {
     MILDRobotState * sourceRobotState = new MILDRobotState(req.sourceRobotState.pan, req.sourceRobotState.tilt,req.sourceRobotState.rotation,req.sourceRobotState.x,req.sourceRobotState.y);
     RobotStatePtr sourceRobotStatePtr(sourceRobotState);
@@ -54,25 +54,25 @@ bool processCalculateCameraPoseServiceCall(CalculateCameraPose::Request &req, Ca
     return true;
 }
 
-bool processIsPositionAllowedServiceCall(IsPositionAllowed::Request &req, IsPositionAllowed::Response &res)
+bool processIsPositionAllowedServiceCall(asr_robot_model_services::IsPositionAllowed::Request &req, asr_robot_model_services::IsPositionAllowed::Response &res)
 {
   res.isAllowed = basicFunctionRobotModelPtr->isPositionAllowed(req.targetPosition);
   return true;
 }
 
-bool processGetRobotPoseServiceCall(GetPose::Request &req, GetPose::Response &res)
+bool processGetRobotPoseServiceCall(asr_robot_model_services::GetPose::Request &req, asr_robot_model_services::GetPose::Response &res)
 {
   res.pose = basicFunctionRobotModelPtr->getRobotPose();
   return true;
 }
 
-bool processGetCameraPoseServiceCall(GetPose::Request &req, GetPose::Response &res)
+bool processGetCameraPoseServiceCall(asr_robot_model_services::GetPose::Request &req, asr_robot_model_services::GetPose::Response &res)
 {
   res.pose = basicFunctionRobotModelPtr->getCameraPose();
   return true;
 }
 
-bool processCalculateCameraPoseCorrectionServiceCall(CalculateCameraPoseCorrection::Request &req, CalculateCameraPoseCorrection::Response &res)
+bool processCalculateCameraPoseCorrectionServiceCall(asr_robot_model_services::CalculateCameraPoseCorrection::Request &req, asr_robot_model_services::CalculateCameraPoseCorrection::Response &res)
 {
   MILDRobotState * sourceRobotState = new MILDRobotState(req.sourceRobotState.pan, req.sourceRobotState.tilt,req.sourceRobotState.rotation,req.sourceRobotState.x,req.sourceRobotState.y);
   RobotStatePtr sourceRobotStatePtr(sourceRobotState);
