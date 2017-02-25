@@ -22,7 +22,7 @@
   
 
   <run_depend>ptu_controller</run_depend>
-  <run_depend>ptu_driver</run_depend>
+  <run_depend>asr_flir_ptu_driver</run_depend>
   <run_depend>world_model</run_depend>
   <run_depend>asr_msgs</run_depend>
   <run_depend>visualization_msgs</run_depend>
@@ -36,7 +36,6 @@
   <run_depend>tf</run_depend>
   <run_depend>asr_rapidxml</run_depend>
   <run_depend>costmap_2d</run_depend>
-  <run_depend>ptu_driver</run_depend>
 
   <export>
     <cpp cflags="-I${prefix}/include -I${prefix}/msg/cpp -I${prefix}/srv/cpp" lflags="-L${prefix}/lib"/>
