@@ -23,7 +23,7 @@ from actionlib import *
 from actionlib.msg import *
 import numpy
 from time import time
-from ptu_controller.msg import PTUMovementGoal, PTUMovementAction
+from asr_flir_ptu_controller.msg import PTUMovementGoal, PTUMovementAction
 from asr_robot_model_services.srv import GetPose, CalculateCameraPoseCorrection, CalculateCameraPose
 from next_best_view.srv import TriggerFrustumVisualization
 from asr_robot_model_services.msg import RobotStateMessage
