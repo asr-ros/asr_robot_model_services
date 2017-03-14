@@ -17,7 +17,6 @@
   <build_depend>sensor_msgs</build_depend>
   <build_depend>visualization_msgs</build_depend>
   <build_depend>asr_msgs</build_depend>
-  <build_depend>asr_rapidxml</build_depend>
   <build_depend>costmap_2d</build_depend>
   
 
@@ -34,7 +33,6 @@
   <run_depend>actionlib</run_depend>
   <run_depend>sensor_msgs</run_depend>
   <run_depend>tf</run_depend>
-  <run_depend>asr_rapidxml</run_depend>
   <run_depend>costmap_2d</run_depend>
 
   <export>
