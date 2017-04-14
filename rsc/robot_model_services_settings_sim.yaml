@@ -7,16 +7,16 @@ useGlobalPlanner: false
 ncp: 0.4 # distance to NearClippingPlane in meter
 fcp: 1.5 # distance to FarClippingPlane in meter
 visualizeIK: false
-IKAngleRating: ANGLE_APPROXIMATION # The rating algorithm used for the orientation angle sampling in the MILDRobotModelWithExactIK module. Available algorithms are: ANGLE_APPROXIMATION, NAVIGATION_PATH, SIMPLE
+IKAngleRating: ANGLE_APPROXIMATION #The rating algorithm used for the orientation angle sampling in the MILDRobotModelWithExactIK module. Available algorithms are: ANGLE_APPROXIMATION, NAVIGATION_PATH, SIMPLE
 # robotModelId == 1 => MILDRobotModelWithExactIK
 # robotModelId == 2 => MILDRobotModelWithApproximatedIK
 robotModelId: 1
-panMin: -200
-panMax: 200
+panMin: -20
+panMax: 20
 tiltMin: -45
 tiltMax: 25
 mSigma: 2.0
 colThresh: 40 # greater values results in problems during simulation in navigation. Smaller -> more distance to obstacles.
 panAngleSamplingStepsPerIteration: 20
 inverseKinematicIterationAccuracy: 0.005
-debugLevels: [ROBOT_MODEL] # ALL, NONE, PARAMETERS, RATING, ROBOT_MODEL, MAP, IK_RATING
+debugLevels: [NONE] # ALL, NONE, PARAMETERS, RATING, ROBOT_MODEL, MAP, IK_RATING
