@@ -129,13 +129,13 @@ namespace robot_model_services {
 
 		int colIdx = 1;
 		glp_set_col_name(lp, colIdx, "x_pan+");
-		double maxPanPlus = abs(phiMax - currentPhi);
+        double maxPanPlus = fabs(phiMax - currentPhi);
 		glp_set_col_bnds(lp, colIdx, (maxPanPlus == 0.0 ? GLP_FX : GLP_DB), 0.0, maxPanPlus);
 		glp_set_obj_coef(lp, colIdx, mOmegaPan);
 
 		colIdx++;
 		glp_set_col_name(lp, colIdx, "x_pan-");
-		double maxPanMinus = abs(currentPhi - phiMin);
+        double maxPanMinus = fabs(currentPhi - phiMin);
 		glp_set_col_bnds(lp, colIdx, (maxPanMinus == 0.0 ? GLP_FX : GLP_DB), 0.0, maxPanMinus);
 		glp_set_obj_coef(lp, colIdx, mOmegaPan);
 

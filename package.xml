@@ -18,8 +18,8 @@
   <build_depend>visualization_msgs</build_depend>
   <build_depend>asr_msgs</build_depend>
   <build_depend>costmap_2d</build_depend>
+  <build_depend>glpk</build_depend>
   
-
   <run_depend>asr_flir_ptu_controller</run_depend>
   <run_depend>asr_flir_ptu_driver</run_depend>
   <run_depend>world_model</run_depend>
@@ -34,6 +34,7 @@
   <run_depend>sensor_msgs</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>costmap_2d</run_depend>
+  <run_depend>glpk</run_depend>
 
   <export>
     <cpp cflags="-I${prefix}/include -I${prefix}/msg/cpp -I${prefix}/srv/cpp" lflags="-L${prefix}/lib"/>
