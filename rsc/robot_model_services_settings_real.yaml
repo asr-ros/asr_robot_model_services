@@ -19,4 +19,4 @@ mSigma: 3.0
 colThresh: 40 # greater values results in problems during simulation in navigation. Smaller -> more distance to obstacles.
 panAngleSamplingStepsPerIteration: 3
 inverseKinematicIterationAccuracy: 0.01
-debugLevels: [ALL] # ALL, NONE, PARAMETERS, SERVICE_CALLS, VISUALIZATION, CALCULATION, RATING, ROBOT_MODEL, MAP, WORLD, VOXEL_GRID, FILTER, IK_RATING, SPACE_SAMPLER, HYPOTHESIS_UPDATER
+debugLevels: [ALL] # ALL, NONE, PARAMETERS, RATING, ROBOT_MODEL, MAP, IK_RATING
