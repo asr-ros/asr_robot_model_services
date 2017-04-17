@@ -99,15 +99,6 @@ std::string DebugHelper::getLevelString()
 
     if (mLevels & PARAMETERS)
         level += "PARAMETERS";
-    if (mLevels & SERVICE_CALLS) {
-        addToString(level, "SERVICE_CALLS");
-    }
-    if (mLevels & VISUALIZATION) {
-        addToString(level, "VISUALIZATION");
-    }
-    if (mLevels & CALCULATION) {
-        addToString(level, "CALCULATION");
-    }
     if (mLevels & RATING) {
         addToString(level, "RATING");
     }
@@ -117,17 +108,8 @@ std::string DebugHelper::getLevelString()
     if (mLevels & MAP) {
         addToString(level, "MAP");
     }
-    if (mLevels & FILTER) {
-        addToString(level, "FILTER");
-    }
     if (mLevels & IK_RATING) {
         addToString(level, "IK_RATING");
-    }
-    if (mLevels & SPACE_SAMPLER) {
-        addToString(level, "SPACE_SAMPLER");
-    }
-    if (mLevels & WORLD) {
-        addToString(level, "WORLD");
     }
 
     return level;

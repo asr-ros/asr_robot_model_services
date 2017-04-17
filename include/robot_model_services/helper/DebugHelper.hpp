@@ -35,26 +35,18 @@ public:
 
     enum DebugLevel {
         PARAMETERS = 1,
-        SERVICE_CALLS = 2,
-        VISUALIZATION = 4,
-        CALCULATION = 8,
-        RATING = 16,
-        ROBOT_MODEL = 32,
-        MAP = 64,
-        FILTER = 128,
-        IK_RATING = 256,
-        SPACE_SAMPLER = 512,
-        HYPOTHESIS_UPDATER = 1024,
-        WORLD = 2048,
-        VOXEL_GRID = 4096
+        RATING = 2,
+        ROBOT_MODEL = 4,
+        MAP = 8,
+        IK_RATING = 16
     };
 
 private:
 
     static boost::shared_ptr<DebugHelper> instancePtr;
-    static const int ALL = PARAMETERS + SERVICE_CALLS + VISUALIZATION + CALCULATION
-                            + RATING + ROBOT_MODEL + MAP + FILTER + IK_RATING + SPACE_SAMPLER
-                            + HYPOTHESIS_UPDATER + WORLD + VOXEL_GRID;
+    static const int ALL = PARAMETERS
+                            + RATING + ROBOT_MODEL + MAP + IK_RATING
+                            + HYPOTHESIS_UPDATER;
     static const int NONE = 0;
 
     ros::NodeHandle mNodeHandle;
