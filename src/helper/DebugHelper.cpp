@@ -153,15 +153,6 @@ int DebugHelper::parseLevels(std::vector<std::string> levels) {
         if (levels.at(i).compare("PARAMETERS") == 0) {
             level += PARAMETERS;
         }
-        else if (levels.at(i).compare("SERVICE_CALLS") == 0) {
-            level += SERVICE_CALLS;
-        }
-        else if (levels.at(i).compare("VISUALIZATION") == 0) {
-            level += VISUALIZATION;
-        }
-        else if (levels.at(i).compare("CALCULATION") == 0) {
-            level += CALCULATION;
-        }
         else if (levels.at(i).compare("RATING") == 0) {
             level += RATING;
         }
@@ -171,17 +162,8 @@ int DebugHelper::parseLevels(std::vector<std::string> levels) {
         else if (levels.at(i).compare("MAP") == 0) {
             level += MAP;
         }
-        else if (levels.at(i).compare("FILTER") == 0) {
-            level += FILTER;
-        }
         else if (levels.at(i).compare("IK_RATING") == 0) {
             level += IK_RATING;
-        }
-        else if (levels.at(i).compare("SPACE_SAMPLER") == 0) {
-            level += SPACE_SAMPLER;
-        }
-        else if (levels.at(i).compare("WORLD") == 0) {
-            level += WORLD;
         }
         else {
             ROS_ERROR_STREAM("Invalid debug level: " << levels.at(i));

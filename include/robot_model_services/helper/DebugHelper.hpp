@@ -45,8 +45,7 @@ private:
 
     static boost::shared_ptr<DebugHelper> instancePtr;
     static const int ALL = PARAMETERS
-                            + RATING + ROBOT_MODEL + MAP + IK_RATING
-                            + HYPOTHESIS_UPDATER;
+                            + RATING + ROBOT_MODEL + MAP + IK_RATING;
     static const int NONE = 0;
 
     ros::NodeHandle mNodeHandle;
