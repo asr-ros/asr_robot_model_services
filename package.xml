@@ -5,6 +5,7 @@
   <author>Aumann Florian, Borella Jocelyn, Heller Florian, Meißner Pascal, Schleicher Ralf, Stöckle Patrick, Stroh Daniel, Trautmann Jeremias, Walter Milena, Wittenbeck Valerij</author>
   <maintainer email="asr-ros@lists.kit.edu">Meißner Pascal</maintainer>
   <license>BSD-derived</license>
+  <url type="website">http://wiki.ros.org/asr_robot_model_services</url>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
