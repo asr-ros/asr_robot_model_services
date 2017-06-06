@@ -2,6 +2,7 @@
 	<node pkg="asr_robot_model_services" type="asr_robot_model_services" name="asr_robot_model_services" output="screen">
 	  <rosparam file="$(find asr_robot_model_services)/rsc/robot_model_services_settings_real.yaml"/>
 	  <rosparam file="$(find asr_robot_model_services)/rsc/TopicsConfig.yaml"/>
+	  <rosparam file="$(find asr_robot_model_services)/rsc/robot_model_frames.yaml"/>
 	  <!-- this is used by costmap -->
           <rosparam file="$(find asr_robot_model_services)/rsc/costmap_params.yaml" command="load"/>
 	</node>
