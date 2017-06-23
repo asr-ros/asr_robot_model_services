@@ -63,12 +63,12 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include
   CATKIN_DEPENDS roscpp roslib message_runtime costmap_2d
-  DEPENDS system_lib
+  #DEPENDS system_lib
 )
 
 include_directories(
   include
-  ${Eigen_INCLUDE_DIRS}
+  ${Eigen3_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
 )
 
