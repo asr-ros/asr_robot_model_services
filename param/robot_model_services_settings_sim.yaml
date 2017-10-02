@@ -20,7 +20,7 @@ tolerance: 0.00003 # tolerance for pathfinding of global planer
 panAngleSamplingStepsPerIteration: 20
 inverseKinematicIterationAccuracy: 0.005
 IKAngleRating: ANGLE_APPROXIMATION #The rating algorithm used for the orientation angle sampling in the MILDRobotModelWithExactIK module. Available algorithms are: ANGLE_APPROXIMATION, NAVIGATION_PATH, SIMPLE
-visualizeIK: false
+visualizeIK: true
 useGlobalPlanner: false
 ncp: 0.4 # distance to NearClippingPlane in meter
 fcp: 1.5 # distance to FarClippingPlane in meter

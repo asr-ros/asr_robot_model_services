@@ -2,8 +2,8 @@
 	<include file="$(find asr_flir_ptu_driver)/launch/ptu_left_mock.launch" />
 	<env name="ROSCONSOLE_CONFIG_FILE" value="$(find asr_robot_model_services)/log/rosconsole.config" />
 	<node pkg="asr_robot_model_services" type="asr_robot_model_services_ik_test" name="asr_robot_model_services" output="screen">
-		<rosparam file="$(find asr_robot_model_services)/rsc/robot_model_services_settings_sim.yaml"/>
-		<rosparam file="$(find asr_robot_model_services)/rsc/robot_model_frames.yaml"/>
-	  	<rosparam file="$(find asr_robot_model_services)/rsc/TopicsConfig.yaml"/>
+		<rosparam file="$(find asr_robot_model_services)/param/robot_model_services_settings_sim.yaml"/>
+		<rosparam file="$(find asr_robot_model_services)/param/robot_model_frames.yaml"/>
+	  	<rosparam file="$(find asr_robot_model_services)/param/TopicsConfig.yaml"/>
 	</node>
 </launch>
