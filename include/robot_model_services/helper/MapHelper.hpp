@@ -34,6 +34,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "robot_model_services/helper/MathHelper.hpp"
 #include "robot_model_services/helper/TypeHelper.hpp"
 #include "robot_model_services/typedef.hpp"
+#include <tf2_ros/transform_listener.h>
 
 namespace robot_model_services {
 	struct RayTracingIndex {
@@ -126,9 +127,12 @@ namespace robot_model_services {
 		}
 
         void setCostmap() {
-            tf::TransformListener tf(ros::Duration(10));
+            tf2_ros::Buffer buffer(ros::Duration(10));
+            tf2_ros::TransformListener tf(buffer);
+            costmap_2d::Costmap2DROS lcr("costmap", buffer);
+
             std::string name = "global_costmap";
-            costmap_2d::Costmap2DROS costmapRos(name, tf);
+            costmap_2d::Costmap2DROS costmapRos(name, buffer);
             costmapRos.start();
             costmapRos.updateMap();
             costmapRos.stop();
